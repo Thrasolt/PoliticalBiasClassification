@@ -2,7 +2,8 @@ from typing import List
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
+
+base_dir = "/home/thrasolt/git/home_project_students"
 
 
 class TwoLaneModel(nn.Module):

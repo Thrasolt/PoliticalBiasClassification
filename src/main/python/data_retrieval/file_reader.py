@@ -1,8 +1,11 @@
 import csv
 from typing import List, Tuple
-left_path = "/home/thrasolt/git/home_project_students/input_data/left_train.csv"
-right_path = "/home/thrasolt/git/home_project_students/input_data/right_train.csv"
-test_path = "/home/thrasolt/git/home_project_students/input_data/test.csv"
+
+base_dir = "/home/thrasolt/git/home_project_students"
+
+left_path = base_dir+"/input_data/left_train.csv"
+right_path = base_dir+"/input_data/right_train.csv"
+test_path = base_dir+"/input_data/test.csv"
 
 
 def read_training_data(

@@ -3,7 +3,7 @@ from typing import List, Dict
 import pickle
 
 from src.main.python.data_retrieval.data_retrieval import retrieve_data_for_pld
-from src.main.python.data_retrieval.file_reader import read_training_data, read_plds
+from src.main.python.data_retrieval.file_reader import read_training_data, read_plds, base_dir
 
 
 def load_raw_data_set(path: str) -> Dict:
@@ -49,10 +49,10 @@ def collect_data(raw_data_set_path: str, pld_list):
 
 if __name__ == "__main__":
 
-    raw_data_set_path = "/home/thrasolt/git/home_project_students/data/" + "raw_data.pickle"
+    raw_data_set_path = base_dir+"/data/" + "raw_data.pickle"
     training_plds = read_training_data()
 
-    test_raw_data_set_path = "/home/thrasolt/git/home_project_students/data/" + "test_raw_data.pickle"
+    test_raw_data_set_path = base_dir+"/data/" + "test_raw_data.pickle"
     test_plds = read_plds()
     for _ in range(30):
         try:

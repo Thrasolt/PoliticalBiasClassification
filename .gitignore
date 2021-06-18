@@ -2,3 +2,5 @@ build/
 /.gradle
 *.swp
 *.pyc
+
+.idea

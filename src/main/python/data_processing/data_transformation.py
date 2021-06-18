@@ -2,7 +2,6 @@ import pickle
 from typing import Dict, List, Tuple
 
 import numpy as np
-import nltk
 import torch
 
 from torchtext.vocab import FastText
@@ -23,16 +22,6 @@ def save_clean_data_set(path: str, data: np.ndarray):
 def aggregate_emotions_mean(emotions: List[str]) -> (np.ndarray, np.ndarray, int):
     emotion_intensities = np.array(emotions).astype(np.float)
     return emotion_intensities.mean(), emotion_intensities.std(), len(emotion_intensities)
-
-
-def process_word_lists(words: List[str]) -> List[str]:
-    st = nltk.PorterStemmer()
-    lm = nltk.WordNetLemmatizer()
-    stemmed_words = [st.stem(word) for word in words]
-    lemmatized_words = [lm.lemmatize(word) for word in stemmed_words]
-
-    return lemmatized_words
-
 
 def words_to_numbers(words: List[str]):
     tokens = tokenizer(" ".join(words))
